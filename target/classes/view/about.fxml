@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AboutController">
+   <children>
+      <Text layoutX="96.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Информация о приложении" wrappingWidth="426.25">
+         <font>
+            <Font name="Segoe UI Semibold" size="29.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.09004739336492895">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7882353067398071" green="0.3960784375667572" blue="0.4588235318660736" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.027175415728561792">
+                     <color>
+                        <Color red="0.7882353067398071" green="0.3960784375667572" blue="0.4588235318660736" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4117647111415863" green="0.23529411852359772" blue="0.6980392336845398" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="29.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Данная программа написана в рамках курсовой работы. Она помогает отслеживать просмотр аниме-мультфильмов, не забывать о том, какие аниме смотрятся сейчас, ещё стоит посмотреть и те, какие Вы уже посмотрели. При нажатии на нужное аниме можно ознакомиться с подробным описанием сюжета мультфильма и поставить соответствуюшую метку. Для того, чтобы пользоваться организационными списками, обязательно нужно зарегистрироваться!" wrappingWidth="541.669921875">
+         <font>
+            <Font name="Segoe UI Light" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Разработчик: Абдрахманова Айсулу Арсеновна" wrappingWidth="332.439453125">
+         <font>
+            <Font name="Segoe UI Light" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Группа: М3О-335Б-20">
+         <font>
+            <Font name="Segoe UI Light" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Университет: МАИ">
+         <font>
+            <Font name="Segoe UI Light" size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

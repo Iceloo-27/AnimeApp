@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" scaleShape="false" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <AnchorPane layoutY="1.0" prefHeight="600.0" prefWidth="210.0" style="-fx-background-color: #cccccc;">
+         <children>
+            <Button fx:id="listAnimeButton" layoutY="117.0" mnemonicParsing="false" onAction="#OpenListAnimePane" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #b3b3b3;" text="Список аниме">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="watchingButton" layoutY="157.0" mnemonicParsing="false" onAction="#OpenWatchingPane" prefHeight="26.0" prefWidth="210.0" style="-fx-background-color: #cccccc;" text="Смотрю">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="willWatchButton" layoutY="197.0" mnemonicParsing="false" onAction="#OpenWillWatchPane" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #cccccc;" text="Буду смотреть">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="watchedButton" layoutY="237.0" mnemonicParsing="false" onAction="#OpenWatchedPane" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #cccccc;" text="Просмотрено">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="aboutButton" layoutY="558.0" mnemonicParsing="false" onAction="#OpenAboutPane" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #cccccc;" text="О приложении">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="authButton" layoutY="518.0" mnemonicParsing="false" onAction="#OpenAuthPane" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #cccccc;" text="Авторизация">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Text layoutX="11.0" layoutY="361.0" opacity="0.75" strokeType="OUTSIDE" strokeWidth="0.0" text="Вы авторизованы как:" textAlignment="CENTER" wrappingWidth="187.20000000000005">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="userNameText" layoutX="34.0" layoutY="398.0" opacity="0.76" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="141.2398338317871">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="90.0" prefWidth="900.0" style="-fx-background-color: black;">
+         <children>
+            <Text fill="WHITE" layoutX="17.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anime">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="129.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Live">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Text>
+            <Button fx:id="addButton" layoutX="603.0" layoutY="25.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #cccccc; -fx-background-radius: 6;" text="Добавить аниме">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="removeButton" layoutX="450.0" layoutY="25.0" mnemonicParsing="false" onAction="#removeAnime" style="-fx-background-color: #cccccc; -fx-background-radius: 6;" text="Удалить">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="updateButton" layoutX="780.0" layoutY="25.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #cccccc; -fx-background-radius: 6;" text="Обновить">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="searchField" layoutX="235.0" layoutY="33.0" onKeyPressed="#search" prefHeight="26.0" prefWidth="187.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="content" layoutX="210.0" layoutY="91.0" prefHeight="510.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Pane fx:id="searchPane" prefHeight="510.0" prefWidth="690.0" visible="false">
+               <children>
+                  <TableView fx:id="searchTable" prefHeight="510.0" prefWidth="690.0">
+                    <columns>
+                      <TableColumn fx:id="searchColumn" prefWidth="689.2000274658203" text="Аниме" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="listAnimePane" prefHeight="510.0" prefWidth="690.0">
+               <children>
+                  <TableView fx:id="animeTable" prefHeight="510.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+                    <columns>
+                      <TableColumn fx:id="animeColumn" prefWidth="689.2000274658203" text="Аниме" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="watchingPane" prefHeight="510.0" prefWidth="690.0" visible="false">
+               <children>
+                  <TableView fx:id="watchingAnimeTable" prefHeight="510.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+                     <columns>
+                        <TableColumn fx:id="watchingAnimeColumn" prefWidth="689.2000274658203" text="Аниме" />
+                     </columns>
+                  </TableView>
+               </children></Pane>
+            <Pane fx:id="willWatchPane" prefHeight="510.0" prefWidth="690.0" visible="false">
+               <children>
+                  <TableView fx:id="willWatchAnimeTable" prefHeight="510.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+                     <columns>
+                        <TableColumn fx:id="willWatchAnimeColumn" prefWidth="689.2000274658203" text="Аниме" />
+                     </columns>
+                  </TableView>
+               </children></Pane>
+            <Pane fx:id="watchedPane" prefHeight="510.0" prefWidth="690.0" visible="false">
+               <children>
+                  <TableView fx:id="watchedAnimeTable" prefHeight="510.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+                     <columns>
+                        <TableColumn fx:id="watchedAnimeColumn" prefWidth="689.2000274658203" text="Аниме" />
+                     </columns>
+                  </TableView>
+               </children></Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

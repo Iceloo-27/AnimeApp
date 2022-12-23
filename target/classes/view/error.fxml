@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="180.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ErrorController">
+   <children>
+      <Text layoutX="148.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ошибка">
+         <font>
+            <Font name="Segoe UI Semibold" size="48.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7882353067398071" green="0.3960784375667572" blue="0.4588235318660736" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4117647111415863" green="0.23529411852359772" blue="0.6980392336845398" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="83.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сначала необходимо авторизоваться! ">
+         <font>
+            <Font name="Segoe UI Semilight" size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
