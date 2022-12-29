@@ -41,7 +41,7 @@ public class RegistrationController {
 
     private User user;
 
-    public RegistrationController() {
+    public RegistrationController(){
         databaseManager = Main.getDatabaseManager();
         this.user = Main.getUser();
     }
@@ -53,12 +53,12 @@ public class RegistrationController {
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.close();
             stage = new Stage();
+            stage.setTitle("Просмотр аниме");
+            stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
             Scene scene = null;
             scene = new Scene(fxmlLoader.load(), 900, 600);
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.setTitle("Регистрация");
-            stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -72,11 +72,11 @@ public class RegistrationController {
             Stage stage = (Stage) authButton.getScene().getWindow();
             stage.close();
             stage = new Stage();
+            stage.setTitle("Авторизация");
+            stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
             Scene scene = null;
             scene = new Scene(fxmlLoader.load(), 600, 401);
             stage.setScene(scene);
-            stage.setTitle("Авторизация");
-            stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
@@ -108,12 +108,12 @@ public class RegistrationController {
 
         try {
             String hashed = Main.getHash(password);
-            if (databaseManager.registerUser(login,hashed).equals("exist")) {
+            if (databaseManager.registerUser(login, hashed).equals("exist")) {
                 errorText.setText("Такой логин уже существует.\nПопробуйте другой");
                 return;
             }
-            User termUser = databaseManager.logIn(login,hashed);
-            if (termUser == null){
+            User termUser = databaseManager.logIn(login, hashed);
+            if (termUser == null) {
                 errorText.setText("произошла ошибка регистрации, попробуйте ещё раз");
                 return;
             }

@@ -131,7 +131,7 @@ public class MainController implements Initializable {
 
     private final User user;
     
-    public MainController(){
+    public MainController() {
         this.databaseManager = Main.getDatabaseManager();
         this.animeList = FXCollections.observableArrayList();
         this.watchingAnimeList = FXCollections.observableArrayList();
@@ -150,9 +150,9 @@ public class MainController implements Initializable {
         try {
             scene = new Scene(fxmlLoader.load(), 600, 401);
             stage.setScene(scene);
-            stage.setResizable(false);
             stage.setTitle("Информация");
-            stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
+            stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -168,11 +168,11 @@ public class MainController implements Initializable {
                 Stage stage = (Stage) authButton.getScene().getWindow();
                 stage.close();
                 stage = new Stage();
+                stage.setTitle("Авторизация");
+                stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
                 Scene scene = null;
                 scene = new Scene(fxmlLoader.load(), 600, 401);
                 stage.setScene(scene);
-                stage.setTitle("Авторизация");
-                stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
                 stage.setResizable(false);
                 stage.show();
             } catch (IOException e) {
@@ -189,9 +189,9 @@ public class MainController implements Initializable {
                 Stage stage = (Stage) authButton.getScene().getWindow();
                 stage.close();
                 stage = new Stage();
+                stage.setTitle("Авторизация");
+                stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
                 Scene scene = null;
-                stage.setTitle("Просмотр аниме");
-                stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
                 scene = new Scene(fxmlLoader.load(), 900, 600);
                 stage.setScene(scene);
                 stage.setResizable(false);
@@ -210,11 +210,11 @@ public class MainController implements Initializable {
             Stage stage = (Stage) addButton.getScene().getWindow();
             stage.close();
             stage = new Stage();
-            Scene scene = null;
-            scene = new Scene(fxmlLoader.load(), 350, 600);
-            stage.setScene(scene);
             stage.setTitle("Добавить аниме");
-            stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
+            stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
+            Scene scene = null;
+            scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
@@ -224,59 +224,59 @@ public class MainController implements Initializable {
 
     @FXML
     void OpenListAnimePane(ActionEvent event) {
-        if (!user.getPermission().equals(Permissions.ADMIN)) {
+        if (!user.getPermission().equals(Permissions.ADMIN)){
             hideRemoveButton();
         }
         clearAllSelection();
         removeButton.setText("Удалить");
-        recolor(listAnimePane, listAnimeButton);
+        recolor(listAnimePane,listAnimeButton);
     }
 
     @FXML
     void OpenWatchedPane(ActionEvent event) {
-        if (user.getPermission().equals(Permissions.GUEST)) {
+        if (user.getPermission().equals(Permissions.GUEST)){
             openErrorPage();
             return;
         }
         clearAllSelection();
         showRemoveButton();
         removeButton.setText("Удалить метку");
-        recolor(watchedPane, watchedButton);
+        recolor(watchedPane,watchedButton);
     }
 
     @FXML
     void OpenWatchingPane(ActionEvent event) {
-        if (user.getPermission().equals(Permissions.GUEST)) {
+        if (user.getPermission().equals(Permissions.GUEST)){
             openErrorPage();
             return;
         }
         clearAllSelection();
         showRemoveButton();
         removeButton.setText("Удалить метку");
-        recolor(watchingPane, watchingButton);
+        recolor(watchingPane,watchingButton);
     }
 
     @FXML
     void OpenWillWatchPane(ActionEvent event) {
-        if (user.getPermission().equals(Permissions.GUEST)) {
+        if (user.getPermission().equals(Permissions.GUEST)){
             openErrorPage();
             return;
         }
         clearAllSelection();
         showRemoveButton();
         removeButton.setText("Удалить метку");
-        recolor(willWatchPane, willWatchButton);
+        recolor(willWatchPane,willWatchButton);
     }
 
     @FXML
     void update(ActionEvent event) {
         searchField.setText("");
-        if(user.getPermission().equals(Permissions.GUEST)) {
+        if(user.getPermission().equals(Permissions.GUEST)){
             animeList.clear();
             try {
                 animeList.addAll(databaseManager.getAnimeList());
-                if (searchPane.isVisible()) {
-                    recolor(listAnimePane, listAnimeButton);
+                if (searchPane.isVisible()){
+                    recolor(listAnimePane,listAnimeButton);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -292,7 +292,7 @@ public class MainController implements Initializable {
             watchedAnimeList.addAll(databaseManager.getUserAnimes(user, AnimeStatus.WATCHED));
             watchingAnimeList.addAll(databaseManager.getUserAnimes(user, AnimeStatus.WATCHING));
             willWatchAnimeList.addAll(databaseManager.getUserAnimes(user, AnimeStatus.WILL_WATCH));
-            if (searchPane.isVisible()) {
+            if (searchPane.isVisible()){
                 recolor(listAnimePane,listAnimeButton);
             }
         } catch (SQLException e) {
@@ -321,11 +321,11 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        searchTable.setPlaceholder(new Label("Вы ничего не добавили в этот список"));
         animeTable.setPlaceholder(new Label("Вы ничего не добавили в этот список"));
         watchedAnimeTable.setPlaceholder(new Label("Вы ничего не добавили в этот список"));
         watchingAnimeTable.setPlaceholder(new Label("Вы ничего не добавили в этот список"));
         willWatchAnimeTable.setPlaceholder(new Label("Вы ничего не добавили в этот список"));
-        searchTable.setPlaceholder(new Label("Вы ничего не добавили в этот список"));
         animeColumn.setCellValueFactory(new PropertyValueFactory<Anime,String>("name"));
         watchedAnimeColumn.setCellValueFactory(new PropertyValueFactory<Anime,String>("name"));
         watchingAnimeColumn.setCellValueFactory(new PropertyValueFactory<Anime,String>("name"));
@@ -374,12 +374,12 @@ public class MainController implements Initializable {
         searchTable.setOnMouseClicked(getTableEventHandler(searchTable));
     }
 
-    private EventHandler<MouseEvent> getTableEventHandler(TableView<Anime> table) {
+    private EventHandler<MouseEvent> getTableEventHandler(TableView<Anime> table){
         EventHandler<MouseEvent> eventHandler = new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 if(mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
-                    if (mouseEvent.getClickCount() == 2) {
+                    if (mouseEvent.getClickCount() == 2){
                         FXMLLoader loader1 = new FXMLLoader();
                         loader1.setLocation(getClass().getResource("../view/anime.fxml"));
                         try {
@@ -389,6 +389,8 @@ public class MainController implements Initializable {
                         }
                         Parent root = loader1.getRoot();
                         Stage stage = new Stage();
+                        stage.setTitle("Просмотр аниме");
+                        stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
                         stage.setScene(new Scene(root));
                         stage.setResizable(false);
                         AnimeController controller = loader1.getController();
@@ -424,13 +426,15 @@ public class MainController implements Initializable {
     @FXML
     public void removeAnime(ActionEvent event) {
         TableView<Anime> selectedTable = whatSelected();
-        if(selectedTable == null) {
+        if(selectedTable == null){
             return;
         }
-        if (selectedTable == animeTable && user.getPermission().equals(Permissions.ADMIN)) {
+        if (selectedTable == animeTable && user.getPermission().equals(Permissions.ADMIN)){
             try {
-                databaseManager.removeAnime(user, selectedTable.getSelectionModel().getSelectedItem());
+                databaseManager.removeAnime(user,selectedTable.getSelectionModel().getSelectedItem());
+                databaseManager.adminLog(user,selectedTable.getSelectionModel().getSelectedItem(),"remove anime");
                 update(new ActionEvent());
+
                 return;
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -438,7 +442,7 @@ public class MainController implements Initializable {
             }
         }
         try {
-            databaseManager.removeUserAnime(user, selectedTable.getSelectionModel().getSelectedItem());
+            databaseManager.removeUserAnime(user,selectedTable.getSelectionModel().getSelectedItem());
             update(new ActionEvent());
         } catch (SQLException e) {
             e.printStackTrace();
@@ -455,14 +459,14 @@ public class MainController implements Initializable {
 
     void openErrorPage() {
         Stage stage = new Stage();
+        stage.setTitle("Ошибка!");
+        stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
         Scene scene = null;
         FXMLLoader fxmlLoader = new FXMLLoader(MainController.class.getResource("../view/error.fxml"));
         try {
             scene = new Scene(fxmlLoader.load(), 480, 180);
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.setTitle("Ошибка!");
-            stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -493,12 +497,12 @@ public class MainController implements Initializable {
     void search(KeyEvent event) {
         if (event.getCode().equals(KeyCode.ENTER)) {
             String s = searchField.getText();
-            if (s.isEmpty()) {
+            if (s.isEmpty()){
                 recolor(listAnimePane, listAnimeButton);
                 return;
             }
             searchAnimeList.clear();
-            List<Anime> temp =  animeList.stream().filter(a -> a.getName().toLowerCase(Locale.ROOT).contains(s.toLowerCase(Locale.ROOT))).collect(Collectors.toList());
+            List<Anime> temp = animeList.stream().filter(a -> a.getName().toLowerCase(Locale.ROOT).contains(s.toLowerCase(Locale.ROOT))).collect(Collectors.toList());
             searchAnimeList.addAll(temp);
             recolor(searchPane, hidden);
         }

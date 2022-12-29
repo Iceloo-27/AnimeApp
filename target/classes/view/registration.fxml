@@ -14,11 +14,11 @@
     <children>
         <AnchorPane prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: #1b1b1b;">
             <children>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #cccccc; -fx-background-radius: 6;" text="&lt; Назад">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
+                <Button fx:id="backButton" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #cccccc; -fx-background-radius: 6;" text="&lt; Назад">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
                 <Button fx:id="authButton" layoutX="518.0" layoutY="13.0" mnemonicParsing="false" onAction="#openAuthPage" style="-fx-background-color: #cccccc; -fx-background-radius: 6;" text="Войти">
                     <font>
                         <Font size="14.0" />
@@ -32,48 +32,48 @@
             </font>
         </TextField>
         <Text layoutX="164.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Логин:">
-         <font>
-            <Font name="Segoe UI Semibold" size="15.0" />
-         </font></Text>
+            <font>
+                <Font name="Segoe UI Semibold" size="15.0" />
+            </font></Text>
         <Text layoutX="153.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль:">
-         <font>
-            <Font name="Segoe UI Semibold" size="15.0" />
-         </font></Text>
+            <font>
+                <Font name="Segoe UI Semibold" size="15.0" />
+            </font></Text>
         <Button fx:id="registrationButton" layoutX="229.0" layoutY="312.0" mnemonicParsing="false" onAction="#register" style="-fx-background-color: #cccccc; -fx-background-radius: 6;" text="Зарегистрироваться">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-      <PasswordField fx:id="passwordField" layoutX="225.0" layoutY="215.0">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </PasswordField>
-      <Text fx:id="errorText" fill="#ff0303" layoutX="213.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="179.73675537109375">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Text layoutX="225.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация">
-         <font>
-            <Font name="Segoe UI Semibold" size="23.0" />
-         </font>
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.7882353067398071" green="0.3960784375667572" blue="0.4588235318660736" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.4117647111415863" green="0.23529411852359772" blue="0.6980392336845398" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Text>
+        <PasswordField fx:id="passwordField" layoutX="225.0" layoutY="215.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </PasswordField>
+        <Text fx:id="errorText" fill="#ff0303" layoutX="213.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="179.73675537109375">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="225.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация">
+            <font>
+                <Font name="Segoe UI Semibold" size="23.0" />
+            </font>
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.7882353067398071" green="0.3960784375667572" blue="0.4588235318660736" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.4117647111415863" green="0.23529411852359772" blue="0.6980392336845398" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Text>
     </children>
 </AnchorPane>

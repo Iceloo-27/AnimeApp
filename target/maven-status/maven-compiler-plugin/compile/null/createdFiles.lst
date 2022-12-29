@@ -3,7 +3,6 @@ controllers\AuthController.class
 controllers\RegistrationController.class
 data\AnimeStatus.class
 data\Anime.class
-Test.class
 data\Permissions.class
 controllers\ErrorController.class
 controllers\MainController$1.class
@@ -12,5 +11,11 @@ controllers\AnimeController.class
 data\User.class
 database\DatabaseManager.class
 database\MySqlManager.class
+data\AnimeReview.class
+data\ImageType.class
 App\Main.class
+controllers\AnimeController$1.class
+controllers\ReviewsController.class
+controllers\AddReviewController.class
 controllers\MainController.class
+data\AnimePicture.class

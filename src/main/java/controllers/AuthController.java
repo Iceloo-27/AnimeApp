@@ -39,7 +39,7 @@ public class AuthController {
 
     private User user;
 
-    public AuthController() {
+    public AuthController(){
         databaseManager = Main.getDatabaseManager();
         this.user = Main.getUser();
     }
@@ -51,11 +51,11 @@ public class AuthController {
             Stage stage = (Stage) RegistrationButton.getScene().getWindow();
             stage.close();
             stage = new Stage();
+            stage.setTitle("Регистрация");
+            stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
             Scene scene = null;
             scene = new Scene(fxmlLoader.load(), 600, 401);
             stage.setScene(scene);
-            stage.setTitle("Регистрация");
-            stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
@@ -70,11 +70,11 @@ public class AuthController {
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.close();
             stage = new Stage();
+            stage.setTitle("Просмотр аниме");
+            stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
             Scene scene = null;
             scene = new Scene(fxmlLoader.load(), 900, 600);
             stage.setScene(scene);
-            stage.setTitle("Просмотр Аниме");
-            stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {

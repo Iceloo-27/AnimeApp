@@ -16,7 +16,6 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Properties;
 
 public class Main extends Application {
 
@@ -39,7 +38,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         stage.setScene(scene);
         stage.setTitle("Просмотр аниме");
-        stage.getIcons().add(new Image("file:src/main/resources/image/icon.png"));
+        stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
         stage.setResizable(false);
         stage.show();
     }

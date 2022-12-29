@@ -39,7 +39,7 @@
                </font></Button>
             <Text layoutX="11.0" layoutY="361.0" opacity="0.75" strokeType="OUTSIDE" strokeWidth="0.0" text="Вы авторизованы как:" textAlignment="CENTER" wrappingWidth="187.20000000000005">
                <font>
-                  <Font size="18.0" />
+                  <Font size="16.0" />
                </font>
             </Text>
             <Text fx:id="userNameText" layoutX="34.0" layoutY="398.0" opacity="0.76" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="141.2398338317871">
@@ -49,16 +49,11 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="90.0" prefWidth="900.0" style="-fx-background-color: black;">
+      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="90.0" prefWidth="900.0" style="-fx-background-color: #1b1b1b;">
          <children>
-            <Text fill="WHITE" layoutX="17.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anime">
+            <Text fill="WHITE" layoutX="20.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AnimeLive">
                <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="129.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Live">
-               <font>
-                  <Font name="System Bold" size="36.0" />
+                  <Font name="Segoe UI Semibold" size="36.0" />
                </font>
             </Text>
             <Button fx:id="addButton" layoutX="603.0" layoutY="25.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #cccccc; -fx-background-radius: 6;" text="Добавить аниме">

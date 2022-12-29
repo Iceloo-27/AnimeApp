@@ -8,9 +8,7 @@ public class Anime {
     private SimpleStringProperty name;
     private SimpleStringProperty description;
 
-    public Anime() {
-
-    }
+    public Anime(){}
 
     public Anime(int id, String name, String description) {
         this.id = new SimpleIntegerProperty(id);
